@@ -1,0 +1,106 @@
+
+1. Total Estimated Revenue by Neighbourhood Group
+SELECT 
+  neighbourhood_group,
+  SUM(price * minimum_nights * availability_365) AS total_estimated_revenue
+FROM airbnb_nyc
+GROUP BY neighbourhood_group
+ORDER BY total_estimated_revenue DESC;
+
+2. Room Type vs Avg. Revenue and Reviews
+
+SELECT 
+  room_type,
+  AVG(price) AS avg_price,
+  AVG(reviews_per_month) AS avg_reviews,
+  AVG(price * minimum_nights * availability_365) AS avg_estimated_revenue
+FROM airbnb_nyc
+GROUP BY room_type
+ORDER BY avg_estimated_revenue DESC;
+
+3. Impact of Minimum Nights on Reviews Per Month
+
+SELECT 
+  minimum_nights,
+  AVG(reviews_per_month) AS avg_reviews_per_month,
+  COUNT(*) AS listings_count
+FROM airbnb_nyc
+WHERE minimum_nights < 30
+GROUP BY minimum_nights
+ORDER BY minimum_nights;
+
+4. High-Revenue Listings' Locations
+
+SELECT 
+  id,
+  name,
+  neighbourhood_group,
+  latitude,
+  longitude,
+  price * minimum_nights * availability_365 AS estimated_revenue
+FROM airbnb_nyc
+WHERE price * minimum_nights * availability_365 > (
+  SELECT PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY price * minimum_nights * availability_365)
+  FROM airbnb_nyc
+);
+
+
+5. Top Hosts by Listings
+
+SELECT 
+  host_id,
+  COUNT(id) AS listings_count,
+  AVG(price) AS avg_price,
+  AVG(reviews_per_month) AS avg_reviews
+FROM airbnb_nyc
+GROUP BY host_id
+ORDER BY listings_count DESC
+LIMIT 10;
+
+6. Seasonality in Bookings (Based on Review Month)
+
+SELECT 
+  EXTRACT(MONTH FROM last_review) AS review_month,
+  AVG(reviews_per_month) AS avg_reviews_per_month
+FROM airbnb_nyc
+WHERE last_review IS NOT NULL
+GROUP BY review_month
+ORDER BY review_month;
+
+7. Price vs Reviews Per Month (Sensitivity)
+
+SELECT 
+  price,
+  AVG(reviews_per_month) AS avg_reviews
+FROM airbnb_nyc
+WHERE price < 1000
+GROUP BY price
+ORDER BY price;
+
+
+8. Underutilized Listings (High Availability, Low Reviews)
+
+SELECT 
+  id,
+  name,
+  neighbourhood_group,
+  availability_365,
+  reviews_per_month
+FROM airbnb_nyc
+WHERE availability_365 > 300 AND reviews_per_month < 0.2;
+
+9. Factors Predicting Price Outliers
+
+SELECT 
+  id,
+  price,
+  minimum_nights,
+  availability_365,
+  reviews_per_month,
+  number_of_reviews
+FROM airbnb_nyc
+WHERE price > (
+  SELECT PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY price)
+  FROM airbnb_nyc
+);
+
