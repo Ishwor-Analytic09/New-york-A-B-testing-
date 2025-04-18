@@ -1,0 +1,41 @@
+1. Which neighbourhood group generates the highest estimated revenue?
+
+Goal: Identify the most profitable boroughs to inform investment decisions.
+
+2. What is the average estimated revenue by room type?
+
+Goal: Understand which room types are more profitable on average.
+
+3. Is there a relationship between minimum nights required and reviews per month?
+
+Goal: Find the ideal minimum night requirement to maximize bookings and reviews.
+
+4. Where are the top 5% high-revenue listings located geographically?
+
+Goal: Map hotspots of premium-performing listings across the city.
+
+5. Who are the top 10 hosts by the number of listings?
+
+Goal: Identify large-scale or professional hosts for partnership or competitive analysis.
+
+6. What months show higher review activity?
+
+Goal: Detect seasonality and peak months of Airbnb usage.
+
+7. What is the relationship between price and reviews per month?
+
+Goal: Assess whether higher or lower pricing correlates with demand/activity.
+
+
+8. Are there listings with high availability but low usage (underutilized assets)?
+
+Goal: Detect inefficient or potentially mismanaged listings.
+
+9. What’s the correlation between features like price, availability, reviews, and minimum nights?
+
+Goal: Uncover underlying data relationships that impact revenue or demand.
+
+
+10. Which neighbourhoods have the most listings overall?
+
+Goal: Discover areas with high competition or market saturation.
