@@ -1,0 +1,42 @@
+This dashboard visually analyzes Airbnb listings in NYC, using 9 different charts. It covers revenue distribution, booking behavior, pricing trends, room types, 
+and outlier patterns—offering insights for hosts and business strategists to optimize listings and revenue.
+
+Insights by Business Questions:
+
+1. Which neighbourhood group brings in the highest revenue?
+Manhattan clearly generates the most revenue, followed by Brooklyn and Queens. This indicates high demand and premium pricing in central locations.
+
+
+2. Which room types bring more revenue and how are they reviewed?
+Entire homes/apartments yield higher average revenue, while private rooms get more reviews per month. This shows a trade-off between occupancy and income.
+
+
+3. Does minimum nights affect guest engagement (reviews)?
+Listings with 1–3 minimum nights get more reviews/month, meaning lower minimum stays may attract more frequent bookings.
+
+
+4. Where are the top-performing listings located geographically?
+High-revenue listings cluster around central NYC (likely Manhattan), suggesting that location strongly impacts profitability.
+
+
+5. Which hosts own the most listings (potential high earners)?
+Certain hosts have many listings (top 10 shown), possibly operating as professional property managers or businesses.
+
+
+6. How does seasonality impact bookings?
+Bookings spike in spring and early summer (April–June), then decline—important for pricing and availability planning.
+
+
+7. Are lower-priced listings reviewed more?
+Yes—there’s a clear inverse relationship between price and reviews/month, suggesting guests are more price-sensitive.
+
+
+8. Are there underutilized listings (high availability, low engagement)?
+Yes—listings with high availability but low reviews/month suggest poor visibility, appeal, or pricing strategy.
+
+
+9. Which features most influence price?
+The heatmap shows correlations—minimum nights and number of reviews have moderate impact, while availability has lesser correlation with price.
+
+This dashboard enables Airbnb hosts and analysts to make data-driven decisions about pricing, property strategy, and listing optimization. Want it converted to Power BI or Tableau too?
+
